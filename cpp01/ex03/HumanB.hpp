@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:06:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 22:24:49 by sngantch         ###   ########.fr       */
+/*   Created: 2025/07/30 20:40:39 by sngantch          #+#    #+#             */
+/*   Updated: 2025/07/30 21:57:27 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int main(void)
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-    Zombie* zombie = zombieHorde(20, "zombie");
-    for (int i = 0; i < 20; i++)
-        zombie[i].announce();
-    delete[] zombie;
-    return (0);
-}
+    private:
+        std::string _name;
+        Weapon* _weapon;
+    public:
+        HumanB(std::string name);
+        ~HumanB(void);
+        void setWeapon(Weapon& weapon);
+        void attack(void);
+};
+
+#endif 

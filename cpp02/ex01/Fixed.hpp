@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:06:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 22:24:49 by sngantch         ###   ########.fr       */
+/*   Created: 2025/08/04 22:20:21 by sngantch          #+#    #+#             */
+/*   Updated: 2025/08/05 20:32:17 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_H
+# define FIXED_H
 
-int main(void)
+#include <iostream>
+
+class Fixed
 {
-    Zombie* zombie = zombieHorde(20, "zombie");
-    for (int i = 0; i < 20; i++)
-        zombie[i].announce();
-    delete[] zombie;
-    return (0);
-}
+private:
+    int _fixedPointValue;
+    static const int fracBit = 8;
+    
+public:
+    Fixed();
+    Fixed(const Fixed& other);
+    Fixed& operator=(const Fixed& other);
+    ~Fixed();
+    int getRawBits() const;
+    void setRawBits(int const raw);
+};
+
+
+
+#endif

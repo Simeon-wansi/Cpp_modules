@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:06:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 22:24:49 by sngantch         ###   ########.fr       */
+/*   Created: 2025/07/31 15:53:02 by sngantch          #+#    #+#             */
+/*   Updated: 2025/07/31 16:04:47 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(void)
+#include <iostream>
+#include <string>
+
+class Harl
 {
-    Zombie* zombie = zombieHorde(20, "zombie");
-    for (int i = 0; i < 20; i++)
-        zombie[i].announce();
-    delete[] zombie;
-    return (0);
-}
+    private:
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+
+    public:
+        Harl(void);
+        ~Harl(void);
+        void complain(std::string level);
+};
+
+#endif

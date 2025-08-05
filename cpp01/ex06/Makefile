@@ -1,16 +1,12 @@
-NAME = brainz
-
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
-
-OBJS = $(SRCS:.cpp=.o)
+NAME =  harlFilter
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-RM = rm -f
+SRCS = main.cpp Harl.cpp
 
-all: $(NAME)
+OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
@@ -18,11 +14,13 @@ $(NAME): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+all: $(NAME)
+
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

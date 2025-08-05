@@ -1,22 +1,22 @@
-NAME = brainz
-
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
-
-OBJS = $(SRCS:.cpp=.o)
+NAME =  fixed
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-RM = rm -f
+RM =  rm -rf
 
-all: $(NAME)
+SRCS = main.cpp Fixed.cpp 
+
+OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJS)

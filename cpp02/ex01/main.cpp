@@ -5,18 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:06:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 22:24:49 by sngantch         ###   ########.fr       */
+/*   Created: 2025/08/05 21:26:05 by sngantch          #+#    #+#             */
+/*   Updated: 2025/08/05 21:26:50 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int main(void)
+
+int main( void )
 {
-    Zombie* zombie = zombieHorde(20, "zombie");
-    for (int i = 0; i < 20; i++)
-        zombie[i].announce();
-    delete[] zombie;
-    return (0);
+Fixed a;
+Fixed b( a );
+Fixed c;
+c = b;
+
+std::cout << a.getRawBits() << std::endl;
+std::cout << b.getRawBits() << std::endl;
+std::cout << c.getRawBits() << std::endl;
+
+return 0;
 }

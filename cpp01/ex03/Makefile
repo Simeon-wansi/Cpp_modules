@@ -1,14 +1,14 @@
-NAME = brainz
+NAME = violence
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
-
-OBJS = $(SRCS:.cpp=.o)
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
+
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 

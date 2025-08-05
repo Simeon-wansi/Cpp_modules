@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 18:06:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/01 22:24:49 by sngantch         ###   ########.fr       */
+/*   Created: 2025/07/30 20:34:46 by sngantch          #+#    #+#             */
+/*   Updated: 2025/07/30 21:59:06 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int main(void)
-{
-    Zombie* zombie = zombieHorde(20, "zombie");
-    for (int i = 0; i < 20; i++)
-        zombie[i].announce();
-    delete[] zombie;
-    return (0);
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL) {}
+
+HumanB::~HumanB(void) {}
+
+void HumanB::attack(void) {
+    if (_weapon)
+        std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
+    else
+        std::cout << _name << " has no weapon" << std::endl;
+}
+
+void HumanB::setWeapon(Weapon& weapon) {
+    _weapon = &weapon;
 }

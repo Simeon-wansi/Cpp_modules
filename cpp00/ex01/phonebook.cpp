@@ -6,13 +6,12 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:46:52 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/28 11:33:13 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 19:38:48 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
-#include <iomanip> 
-
+#include "PhoneBook.hpp"
+#include <iomanip>
 
 PhoneBook::PhoneBook()
 {
@@ -20,14 +19,16 @@ PhoneBook::PhoneBook()
     oldestContactIndex = 0;
 }
 
-bool isWhitesoaceOnly(const std::string& str)
+PhoneBook::~PhoneBook() {}
+
+bool isEmptyOrWhitespace(const std::string& str)
 {
-    size_t i = 0;
-    while (i < str.length())
+    if (str.empty()) return true;
+    
+    for (size_t i = 0; i < str.length(); i++)
     {
-        if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n') 
+        if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\r') 
             return false;
-        i++;
     }
     return true;
 }
@@ -37,34 +38,48 @@ void PhoneBook::addContact()
     Contact newContact;
     std::string str;
     
-    std::cout << "Enter first name: ";
-    std::getline(std::cin, str);
-    if (str.empty())
-        return;
+    do {
+        std::cout << "Enter first name: ";
+        std::getline(std::cin, str);
+        if (isEmptyOrWhitespace(str))
+            std::cout << "❌ Please enter a valid first name ❌" << std::endl;
+    } while (isEmptyOrWhitespace(str));
+    
     newContact.setFirstName(str);
     
-    std::cout << "Enter last name: ";
-    std::getline(std::cin, str);
-    if (str.empty())
-        return;
+    do {
+        std::cout << "Enter last name: ";
+        std::getline(std::cin, str);
+        if (isEmptyOrWhitespace(str))
+            std::cout << "❌ Please enter a valid last name ❌" << std::endl;
+    } while (isEmptyOrWhitespace(str));
+   
     newContact.setLastName(str);
 
-    std::cout << "Enter nickname: ";
-    std::getline(std::cin, str);
-    if (str.empty())
-        return;
+    do {
+        std::cout << "Enter nickname: ";
+        std::getline(std::cin, str);
+        if (isEmptyOrWhitespace(str))
+            std::cout << "❌ Please enter a valid nickname ❌" << std::endl;
+    } while (isEmptyOrWhitespace(str));
+    
     newContact.setNickName(str);
     
-    std::cout << "Enter phone number: ";
-    std::getline(std::cin, str);
-    if (str.empty())
-        return;
+    do {
+        std::cout << "Enter phone number: ";
+        std::getline(std::cin, str);
+        if (isEmptyOrWhitespace(str))
+            std::cout << "❌ Please enter a valid phone number ❌" << std::endl;
+    } while (isEmptyOrWhitespace(str));
     newContact.setPhoneNumber(str);
     
-    std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, str);
-    if (str.empty())
-        return;
+    do{
+        std::cout << "Enter darkest secret: ";
+        std::getline(std::cin, str);
+        if (isEmptyOrWhitespace(str))
+            std::cout << "❌ Please enter a valid darkest secret ❌" << std::endl;
+    } while (isEmptyOrWhitespace(str));
+    
     newContact.setDarkestSecret(str);
 
     if(contactCount < 8)
@@ -97,39 +112,33 @@ bool PhoneBook::isValidIndex(std::string& input)
     
     if (!isNumber(input))
     {
-        std::cout << "Please enter a valid number between 0 and 7" << std::endl;
+        std::cout << "❌ Please enter a valid number between 0 and 7 ❌" << std::endl;
         return false;
     }
     index = std::stoi(input);
     if (index >= contactCount)
     {
-        std::cout << "Please enter a valid number between 0 and " << contactCount - 1 << std::endl;
+        std::cout << "❌ Please enter a valid number between 0 and " << contactCount - 1 << " next time ❌" << std::endl;
         return false;
     }
     if (index < 0 || index > 7)
     {
-        std::cout << "Please enter a valid number between 0 and 7" << std::endl;
+        std::cout << "❌ Please enter a valid number between 0 and 7 ❌" << std::endl;
         return false;
     }
     return true;
-}
-
-void PhoneBook::displayContact(int index)
-{
-    std::cout << "|index| |First name| |Last name| |Nickname|" << std::endl;
-    std::cout << index << contacts[index].getFirstName();
-    std::cout << contacts[index].getLastName();
-    std::cout << contacts[index].getNickName();    
 }
 
 void PhoneBook::displayContactsList() const
 {
     int i = 0;
     
+    std::cout << GREEN;
     std::cout << std::setw(10) << std::right << "index" << "|";
     std::cout << std::setw(10) << std::right << "First name" << "|";
     std::cout << std::setw(10) << std::right << "Last name" << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << "|" << std::endl;
+    std::cout << RESET;
     
     while (i < contactCount && i < 8)
     {
@@ -162,5 +171,3 @@ void PhoneBook::searchContact()
         contacts[index].displayFull();
     }
 }
-
-
