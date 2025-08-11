@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:20:32 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/11 15:09:27 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:38:36 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         int _hitPoint;
         int _energyPoint;
@@ -38,4 +38,3 @@ class ClapTrap
 };
 
 #endif
- 

@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:29:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/06 16:05:11 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/09 16:52:05 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int Fixed::getRawBits() const
 
 void Fixed::setRawBits(int const raw)
 {
+    std::cout << "setRawBits member function called" << std::endl;
     _fixedPointValue = raw;
 }
-
 
 Fixed::Fixed(int const value)
 {
@@ -76,6 +76,6 @@ float Fixed::toFloat() const
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
-    os << obj.toFloat();  // Use your toFloat() function
+    os << obj.toFloat();  // Use  toFloat() function
     return os;
 }

@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 20:06:14 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/11 19:07:54 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/11 20:18:21 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 ClapTrap::ClapTrap() : _name("") , _hitPoint(10) , _energyPoint(10),  _attackDamage(0) 
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other): _name(other._name), _hitPoint(other._hitPoint), _energyPoint(other._energyPoint), _attackDamage(other._attackDamage) 
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -40,12 +40,12 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0) 
 {
-    std::cout << "Constructor with name called" << std::endl;
+    std::cout << "ClapTrap constructor with name called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << _name << " is destroyed" << std::endl;
+    std::cout << _name << " is destroyed by ClapTrap" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

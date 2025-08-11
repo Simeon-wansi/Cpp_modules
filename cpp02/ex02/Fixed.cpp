@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:29:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/06 20:43:13 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/09 14:40:36 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ float Fixed::toFloat() const
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
-    os << obj.toFloat();  // Use your toFloat() function
+    os << obj.toFloat();  // Use toFloat() function
     return os;
 }
 
@@ -149,16 +149,25 @@ Fixed Fixed::operator/(const Fixed& other) const
 }
 
 
+Fixed Fixed::operator++(int)
+{
+    Fixed temp = *this;
+    ++(*this);
+    return temp;
+}
+
 Fixed& Fixed::operator++()
 {
     _fixedPointValue++;
     return *this;
 }
 
-Fixed Fixed::operator++(int)
+
+
+Fixed Fixed::operator--(int)
 {
     Fixed temp = *this;
-    ++(*this);
+    --(*this);
     return temp;
 }
 
@@ -168,12 +177,6 @@ Fixed& Fixed::operator--()
     return *this;
 }
 
-Fixed Fixed::operator--(int)
-{
-    Fixed temp = *this;
-    --(*this);
-    return temp;
-}
 
 Fixed& Fixed::min(Fixed& a, Fixed& b)
 {

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 22:20:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/09 15:57:41 by sngantch         ###   ########.fr       */
+/*   Created: 2025/08/07 21:56:32 by sngantch          #+#    #+#             */
+/*   Updated: 2025/08/11 18:48:36 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-#include <iostream>
-
-class Fixed
+int main()
 {
-private:
-    int _fixedPointValue;
-    static const int fracBit = 8;
+    ClapTrap clap("Clappy");
     
-public:
-    Fixed();
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
-    ~Fixed();
-    int getRawBits() const;
-    void setRawBits(int const raw);
-};
-
-#endif
+    ScavTrap scav("Scavvy");
+    
+    clap.attack("Enemy1");
+    
+    scav.attack("Enemy 2");
+    
+    scav.guardGate();
+    
+    scav.takeDamage(5);
+    scav.beRepaired(5);
+    
+    return 0;   
+}

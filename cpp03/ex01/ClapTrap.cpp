@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 20:06:14 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/11 19:07:54 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/11 20:17:12 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0) 
 {
-    std::cout << "Constructor with name called" << std::endl;
+    std::cout << "ClapTrap constructor with name called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()

@@ -5,24 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 21:26:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/09 16:49:14 by sngantch         ###   ########.fr       */
+/*   Created: 2025/08/07 21:56:32 by sngantch          #+#    #+#             */
+/*   Updated: 2025/08/11 20:15:48 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-
-int main( void )
+int main()
 {
-Fixed a;
-Fixed b( a );
-Fixed c;
-c = b;
+    ClapTrap clap("Clappy");
+    
+    ScavTrap scav("Scavvy");
 
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+    FragTrap frag("Fraggy");
+    
+    clap.attack("Enemy1");
+    
+    scav.attack("Enemy 2");
 
-return 0;
+    frag.attack("Enemy 3");
+    
+    scav.guardGate();
+    
+    frag.highFivesGuys();
+    
+    scav.takeDamage(5);
+    scav.beRepaired(5);
+
+    frag.takeDamage(5);
+    frag.beRepaired(5);
+    
+    std::cout << "\n= Destruction Order =" << std::endl;
+
+    return 0;   
 }

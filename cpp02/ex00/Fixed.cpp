@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:29:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/05 22:01:36 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/09 16:48:03 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Fixed::Fixed() 
 {
-    _fixedPointValue = 0;
     std::cout << "Default constructor called" << std::endl;
+    _fixedPointValue = 0;
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -43,6 +43,7 @@ int Fixed::getRawBits() const
 
 void Fixed::setRawBits(int const raw)
 {
+    std::cout <<"setRawBits member fucntion called" << std::endl;
     _fixedPointValue = raw;
 }
 

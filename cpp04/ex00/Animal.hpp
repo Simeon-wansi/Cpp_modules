@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 22:20:21 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/09 15:57:41 by sngantch         ###   ########.fr       */
+/*   Created: 2025/08/11 22:22:49 by sngantch          #+#    #+#             */
+/*   Updated: 2025/08/11 22:29:34 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
+#include <string>
 #include <iostream>
 
-class Fixed
+class Animal
 {
-private:
-    int _fixedPointValue;
-    static const int fracBit = 8;
-    
-public:
-    Fixed();
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
-    ~Fixed();
-    int getRawBits() const;
-    void setRawBits(int const raw);
+    protected:
+        std::string _type;
+    public:
+        Animal();
+        ~Animal();
+        Animal &operator=(const Animal &other);
+        Animal(const Animal &other);
+        
+        std::string getType() const;
 };
 
 #endif
