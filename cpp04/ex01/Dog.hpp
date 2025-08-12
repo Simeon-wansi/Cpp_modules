@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 22:27:40 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/12 19:28:07 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/12 22:40:13 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
+    private:
+        Brain *_brain;
     public:
         Dog();
         ~Dog();
