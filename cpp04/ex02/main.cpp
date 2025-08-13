@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 18:19:49 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/12 22:46:46 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/13 21:58:44 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()
 
 
 // this main() should have an error because of 
-// of the pure virtual function
+// of the Animal class being instantiated 
 
 // int main()
 // {
