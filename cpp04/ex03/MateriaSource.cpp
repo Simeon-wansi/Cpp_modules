@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:53:20 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/18 20:47:13 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:38:58 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,7 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & other)
     for (int i = 0; i < 4; i++)
     {
         if (other._learnedMaterias[i])
-        {
             _learnedMaterias[i] = other._learnedMaterias[i]->clone();
-            // _nbMaterias++;
-        }
     }
     
     return *this;
@@ -75,8 +72,11 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & other)
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    if (_nbMaterias >= 4)
+    if (_nbMaterias >= 4  || !m)
+    {
+        std::cout << "MateriaSource can't learn more materias or materia is NULL" << std::endl;
         return;
+    }
     for (int i = 0; i < 4; i++)
     {
         if (!_learnedMaterias[i])

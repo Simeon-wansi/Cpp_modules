@@ -6,22 +6,15 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 19:03:44 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/18 22:29:31 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:10:10 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-
-// Character::Character(std::string name)
-// {
-//     _name = name;
-//     for (int i = 0; i < 4; i++)
-//         _inventory[i] = NULL;
-// }
-
 Character::Character(Character const & other)
 {
+    std::cout << "Copy constructor called for Character" << std::endl;
     _name = other._name;
     for (int i = 0; i < 4; i++)
     {
@@ -45,6 +38,7 @@ Character::~Character(void)
 
 Character & Character::operator=(Character const & other)
 {
+    std::cout << "Copy assignment operator called for Character" << std::endl;
     if (this == &other)
         return *this;
     _name = other._name;
@@ -59,9 +53,8 @@ Character & Character::operator=(Character const & other)
     }
     return *this;
 }
-Character::Character(std::string name)
+Character::Character(std::string name): _name(name)
 {
-    _name = name;
     for (int i = 0; i < 4; i++)
         _inventory[i] = NULL;
 }

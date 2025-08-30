@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:29:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/09 14:40:36 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/08/28 19:50:37 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ Fixed Fixed::operator/(const Fixed& other) const
         std::cout << "Error: Division by zero" << std::endl;
         return result;
     }
-    result.setRawBits((_fixedPointValue << _fracBit) / other._fixedPointValue);
+    result.setRawBits((_fixedPointValue << _fracBit) / (other._fixedPointValue << _fracBit));
     return result;
 }
 
