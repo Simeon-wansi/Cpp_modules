@@ -6,12 +6,12 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 20:36:13 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/03 15:02:37 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/05 15:12:46 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 Bureaucrat::Bureaucrat(void): _name("bureau"), _grade(150)
@@ -78,7 +78,7 @@ void Bureaucrat::decrementGrade()
     
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     
     try
@@ -93,6 +93,18 @@ void Bureaucrat::signForm(Form &form)
     
 }
 
+
+void Bureaucrat::executeForm(AForm const& form) const
+{
+    try{
+        form.execute(*this);
+        std::cout << _name << " execucuted " << form.getName() << std::endl;
+    }        
+    catch (std::exception& e)
+    {
+        std::cout<< _name << " coudn't execute " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {

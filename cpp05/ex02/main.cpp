@@ -6,32 +6,39 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/05 14:35:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/05 16:02:17 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 
 int main(void)
 {
-    // Test 1: Low grade trying to sign
-    Bureaucrat lowGrade("Bob", 150);
-    Form form1("Tax form", 50, 25);
-    
-    std::cout << "Before signing: " << form1 << std::endl;
-    lowGrade.signForm(form1);  
-    std::cout << "After attempt: " <<form1 << std::endl;
-    
-    std::cout << "\n--- Second Test ---\n";
-    
-    // Test 2: High grade signing
-    Bureaucrat highGrade("Alice", 1);
-    Form form2("Important form", 25, 50);
-    
-    std::cout << "Before signing: " << form2 << std::endl;
-    highGrade.signForm(form2); 
-    std::cout << "After signing: " << form2 << std::endl;
+    try
+    {
+        Bureaucrat lowGrade("Arnaud", 150);
+        Bureaucrat midGrade("Lise", 140);
+        Bureaucrat highGrade("Simeon", 130);
+
+        ShrubberyCreationForm shrubForm("garden");
+
+        std::cout << "\n Signing test \n" ;
+        
+        lowGrade.signForm(shrubForm);
+        midGrade.signForm(shrubForm);
+        
+        std::cout << "\n Testing execution \n";
+        lowGrade.executeForm(shrubForm);
+        highGrade.executeForm(shrubForm);
+    }
+    catch (std::exception& e)
+    {
+        std::cout << "Execption: " << e.what() << std::endl;
+    }
+
+    return 0;
 }
 

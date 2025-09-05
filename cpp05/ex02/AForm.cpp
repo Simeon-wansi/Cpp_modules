@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form(): _name("form"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
+AForm::AForm(): _name("AForm"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
 { }
 
-Form::Form(const Form& other): _name(other._name), _signed(other._signed), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
+AForm::AForm(const AForm& other): _name(other._name), _signed(other._signed), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 { }
 
-Form& Form::operator=(Form const& other)
+AForm& AForm::operator=(AForm const& other)
 {
     std::cout <<" Copy assigment operator called\n ";
 
@@ -29,42 +29,42 @@ Form& Form::operator=(Form const& other)
     return *this;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
     std::cout << _name << "Destroyed !\n";
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute):_name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute):_name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     if (gradeToExecute < 1 || gradeToSign < 1)
         throw GradeTooHighException();
     if (gradeToExecute > 150 || gradeToSign > 150)
         throw GradeTooLowException();
 
-    std::cout << "Form parametized with constructor called!\n";
+    std::cout << "AForm parametized with constructor called!\n";
 }
 
-std::string Form::getName() const 
+std::string AForm::getName() const 
 {
     return (_name);
 }
 
-bool Form::getSign() const 
+bool AForm::getSign() const 
 {
     return (_signed);
 }
 
-int Form::getGradeToExecute() const
+int AForm::getGradeToExecute() const
 {
     return(_gradeToExecute);
 }
 
-int Form::getGradeToSign() const
+int AForm::getGradeToSign() const
 {
     return (_gradeToSign);
 }
 
-void Form::beSigned(Bureaucrat const& bureaucrat)
+void AForm::beSigned(Bureaucrat const& bureaucrat)
 {
     if (bureaucrat.getGrade() <= _gradeToSign )
         _signed = true;
@@ -72,7 +72,13 @@ void Form::beSigned(Bureaucrat const& bureaucrat)
         throw GradeTooLowException();
 }
 
-std::ostream& operator<<(std::ostream& os, const Form& obj)
+// void AForm::execute(Bureaucrat const &executor) const
+// {
+//     if (_signed && _gradeToSign <= _gradeToExecute)
+//         std::cout<< executor.getName() << " executed " << _name << std::endl;
+// }
+
+std::ostream& operator<<(std::ostream& os, const AForm& obj)
 {
     os << obj.getName() << " :" << obj.getSign() << " :" << obj.getGradeToExecute()<< " :" << obj.getGradeToSign() ;
     return os;
