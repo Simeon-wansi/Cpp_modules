@@ -57,6 +57,7 @@ void printInFile(const std::string& fileName)
 
     outFile.close();
     std::cout << "ASCII tree saved to " << fileName << std::endl;
+    
 }
 
 
