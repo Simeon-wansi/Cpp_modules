@@ -60,7 +60,6 @@ void printInFile(const std::string& fileName)
     
 }
 
-
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 {
 
