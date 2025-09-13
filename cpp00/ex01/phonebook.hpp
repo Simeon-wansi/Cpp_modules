@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:47:51 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/26 19:53:36 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 19:37:30 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 #include <iostream>
 #include <string>
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
 
 class PhoneBook
 {
@@ -25,17 +31,15 @@ class PhoneBook
         Contact contacts[8];
         int contactCount;
         int oldestContactIndex;
+
+        bool isValidIndex(std::string& input);
     public:
         PhoneBook();
+        ~PhoneBook();
         
         void addContact();
         void searchContact();
-        void displayContactsList() const;
-        void displayContact(int index);
-
-    private:
-        std::string getInput(const std::string& prompt);
-        bool isValidIndex(std::string& input);
+        void displayContactsList() const; 
 };
 
 #endif

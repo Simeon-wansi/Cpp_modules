@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 21:50:40 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/29 19:04:42 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 18:28:00 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ void Account::displayStatus(void) const
     _displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
-
 
 
 Account ::~Account( void )

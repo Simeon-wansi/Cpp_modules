@@ -6,11 +6,12 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 20:31:52 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/26 13:28:34 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 19:02:09 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstring>
 
 void	print_upper(char *str)
 {
@@ -19,7 +20,7 @@ void	print_upper(char *str)
 	while (*str)
 	{
 		if (*str >= 'a' && *str <= 'z')
-			c = (*str - ('a' - 'A'));
+			c = (char)toupper(*str);
 		else
 			c = *str;
 		std::cout << c;

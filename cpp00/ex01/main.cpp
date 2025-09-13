@@ -6,11 +6,11 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 15:10:46 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/26 19:32:31 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 19:20:40 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 
 int main()
@@ -18,12 +18,18 @@ int main()
     PhoneBook phoneBook;
     std::string command;
 
-    std::cout << "📞 Welcome to My Awesome PhoneBook!" << std::endl;
-    std::cout << " Available command: ADD, SEARCH, EXIT" << std::endl;
+    std::cout << CYAN << "*******************************************" << RESET << std::endl;
+    std::cout << CYAN << " 🥇 Welcome to My Awesome PhoneBook! 📞🥇" << RESET << std::endl;
+    std::cout << CYAN << "*******************************************" << RESET << std::endl;
+    std::cout << GREEN << " Available commands: " << RESET;
+    std::cout << YELLOW << "ADD" << RESET << ", ";
+    std::cout << BLUE << "SEARCH" << RESET << ", ";
+    std::cout << RED << "EXIT" << RESET << std::endl;
+    std::cout << CYAN << "  ----------------------------------" << RESET << std::endl;
     
     while(true)
     {
-        std::cout << "\n Enter command: ";
+        std::cout << "\n ⌨️ Enter command: ";
         if (!std::getline(std::cin, command))
             break;
         if (command == "ADD")
@@ -32,11 +38,11 @@ int main()
             phoneBook.searchContact();
         else if (command ==  "EXIT")
         {
-            std::cout << "Goodbye!" <<std::endl;
+            std::cout << BLUE << " 👋🏼 Goodbye! 👋🏼 " << RESET << std::endl;
             break;
         }
         else if (!command.empty())
-            std::cout << "Invalid command. Use: ADD, SEARCH, or EXIT" << std::endl;
+            std::cout << RED<< "Invalid command. Use: ADD, SEARCH, or EXIT" << RESET << std::endl;
     }
     return (0);
 }

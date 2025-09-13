@@ -6,11 +6,11 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 15:12:30 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/26 20:29:03 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 19:39:53 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact() {
     firstName = "";
@@ -19,6 +19,8 @@ Contact::Contact() {
     phoneNumber = "";
     darkestSecret = "";
 }
+
+Contact::~Contact() {}
 
 void Contact::setFirstName(const std::string& str)
 {

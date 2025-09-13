@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:14:41 by sngantch          #+#    #+#             */
-/*   Updated: 2025/07/28 12:29:36 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/07/31 17:35:28 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ class Contact
         std::string phoneNumber;
         std::string darkestSecret;
         
+        bool isEmpty() const; 
     public:
         Contact();
+        ~Contact();
 
         //setters
         void setFirstName(const std::string& str);
@@ -41,10 +43,9 @@ class Contact
         std::string getNickName()  const;
         std::string getPhoneNumber() const;
         std::string getDarkestSecret() const;
-
-        bool isEmpty() const; 
+        
         void displayFull() const;
-        std::string truncateField(const std::string& field) const;
+        std::string truncateField(const std::string& field) const;        
 };
 
 #endif 
