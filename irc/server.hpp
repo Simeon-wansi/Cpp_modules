@@ -13,9 +13,11 @@ class Channel;
 class Server {
 private:
     // Network configuration
+
     int _port;
-    std::string _password;
     int _server_fd;
+    std::string _serverName;
+    std::string _password;
     
     // Client management
     static const int MAX_CLIENTS = 100;
@@ -44,6 +46,10 @@ public:
     Client* getClientByNick(const std::string& nickname);
     Channel* getChannel(const std::string& name);
     Channel* createChannel(const std::string& name, Client* creator);
+    void removeChannel(const std::string& channelName);
+
+    bool isNickNameInUse(const std::string& nickName);
+
     
     // Getters
     const std::string& getPassword() const { return _password; }

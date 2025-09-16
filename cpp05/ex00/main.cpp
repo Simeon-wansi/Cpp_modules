@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/29 20:27:30 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/16 20:37:38 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 
     std::cout<<"\n";
 
-    for( int i = 1; i < 152; i++)
+    for( int i = 1; i < 153; i++)
     {
         try
         {

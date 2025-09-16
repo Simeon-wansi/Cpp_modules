@@ -13,6 +13,7 @@
 #include <fcntl.h>
 
 constexpr int PORT = 8080;         // Server will listen on port 8080
+
 constexpr int MAX_CLIENTS = 10;    // Max slots in poll array (1 server + 9 clients)
 
 int main() {

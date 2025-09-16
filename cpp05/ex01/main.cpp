@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/05 14:35:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/16 20:43:57 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int main(void)
     Form form1("Tax form", 50, 25);
     
     std::cout << "Before signing: " << form1 << std::endl;
-    lowGrade.signForm(form1);  
+    std::cout << std::endl;
+    
+    lowGrade.signForm(form1);
+
+    std::cout << std::endl;
     std::cout << "After attempt: " <<form1 << std::endl;
     
     std::cout << "\n--- Second Test ---\n";
@@ -31,7 +35,13 @@ int main(void)
     Form form2("Important form", 25, 50);
     
     std::cout << "Before signing: " << form2 << std::endl;
-    highGrade.signForm(form2); 
+    std::cout << std::endl;
+    
+    highGrade.signForm(form2);
+
+    std::cout << std::endl;
     std::cout << "After signing: " << form2 << std::endl;
+
+    std::cout << "\nCleaning" << std::endl;
 }
 

@@ -257,6 +257,11 @@ int Server::findEmptySlot() {
     return -1;
 }
 
+void Server::addToPoll(int fd)
+{
+    
+}
+
 void Server::removeFromPoll(int fd) {
     for (int i = 0; i < MAX_CLIENTS; i++) {
         if (_poll_fds[i].fd == fd) {
