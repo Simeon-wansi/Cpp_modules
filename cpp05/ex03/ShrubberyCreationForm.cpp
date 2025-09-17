@@ -12,6 +12,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("Shrubber
     std::cout << "ShrubberyCreationForm created for target: " << target << std::endl;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(std::string formName, std::string target):AForm(formName, 145, 137), _target(target)
+{
+    std::cout << "ShrubberyCreationForm created for target: " << target << std::endl;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other): AForm(other)
 {
     _target = other._target;

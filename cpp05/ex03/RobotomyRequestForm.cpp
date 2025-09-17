@@ -12,7 +12,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm("Robotomy Req
 {
     std::cout << "RobotomyRequestForm created for target : " << target << std::endl;
 }
-
+RobotomyRequestForm::RobotomyRequestForm(std::string formName, std::string target):AForm(formName, 72, 45), _target(target)
+{
+    std::cout << "RobotomyRequestForm created for target : " << target << std::endl;
+}
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& other): AForm(other)
 {
     _target = other._target;

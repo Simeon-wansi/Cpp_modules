@@ -9,6 +9,10 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):AForm("Presid
 {
     std::cout << " PresidentialPardonForm  created with target: " << target << std::endl;
 }
+PresidentialPardonForm::PresidentialPardonForm(std::string formName, std::string target):AForm(formName, 25, 5), _target(target)
+{
+    std::cout << " PresidentialPardonForm  created with target: " << target << std::endl;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& other): AForm(other)
 {
