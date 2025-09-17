@@ -61,7 +61,6 @@ AForm* Intern::makeForm(std::string formName, std::string target)
     for (int i=0; i < 3; i++)
     {
         if(formName == requests[i]){
-            std::cout << "Intern creates " << formName << std::endl;
             return (this->*functions[i])(formName, target);
         }
     }

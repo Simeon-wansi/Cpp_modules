@@ -27,7 +27,7 @@ public:
         public:
             virtual const char* what() const throw()
             {
-                return "Form not recongnized";
+                return "Form not recognized";
             }
     };
 };
