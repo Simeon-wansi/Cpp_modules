@@ -1,0 +1,76 @@
+`Channels names` are strings (beginning with a '&' or '#' character) of
+   length up to 200 characters.  Apart from the the requirement that the
+   first character being either '&' or '#'; the only restriction on a
+   channel name is that it may not contain any spaces (' '), a control G
+   (^G or ASCII 7), or a comma (',' which is used as a list item
+   separator by the protocol).
+
+channel operators is the owner of the channel. command thart maybe ONLY be used bu the channel operator
+- KICK
+- MODE
+- INVITE
+- TOPIC
+
+channel operator is identified by an @ symbol next to their nickname whenever it is associated with a channel.
+
+
+
+Poll Array Management
+
+fd = -1 means empty slot
+events = POLLIN means "watch for incoming data"
+revents is filled by poll() with what actually happened
+
+Poll Structure
+_poll_fds[i].fd = -1;        // File descriptor to watch
+_poll_fds[i].events = POLLIN; // What events we want to monitor
+_poll_fds[i].revents = 0;    // What events actually happened
+
+
+IRC Channel Modes :
++t (Topic Privilege): Only channel operators can change the topic
+Normal: Anyone can do "/topic #general New topic"  
++t mode: Only @operators can change topic
+
++l (User Limit): Maximum number of users allowed
++l 50: Only 50 people can join this channel
+No +l: Unlimited users
+
++i (Invite Only): Only invited users can join
++i mode: Must receive INVITE command to join
+No +i: Anyone can JOIN
+
++k (Channel Key): Password required to join
++k password123: Must provide password to join
+No +k: No password needed
+
+Server
+├── clients map<fd, Client*>
+│   └── Client has set<Channel*> of joined channels
+└── channels map<name, Channel*>  
+    └── Channel has vector<Client*> of members
+
+
+Channel Set up :
+
+1. Channel State Management
+Channels track multiple states: member list, operator list, invited users, topic, and various mode flags. Each state is independent but affects channel behavior.
+
+2. Bidirectional Client-Channel Linking
+When a client joins a channel:
+Channel adds client to its member list
+Client adds channel to its joined channels set
+Both objects maintain pointers to each other.
+
+3. Operator vs Regular User Distinction
+Channel operators have special privileges (kick users, change topic, set modes). Regular users can only send messages and leave.
+
+4. Mode System Controls Access
+Channel modes restrict who can join, who can speak, and how the channel behaves. Modes are enforced when users try to join or perform actions.
+
+5. Message Broadcasting
+When someone sends a message to a channel, the channel object loops through all its members and calls client->write() on each one (except the sender).
+
+6. Memory Management
+When channels or clients are destroyed, they must clean up all cross-references to prevent dangling pointers and memory leaks.
+

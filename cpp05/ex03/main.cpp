@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/17 23:01:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/17 23:06:15 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,6 @@ int main(void)
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== All tests completed ===" << std::endl;
     return 0;
 }
 
