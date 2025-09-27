@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 20:36:13 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/29 18:29:08 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:12:45 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void Bureaucrat::decrementGrade()
     _grade += 1;
     
 }
-
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {

@@ -36,7 +36,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "ShrubberyCreationForm destroyed";
+    std::cout << "ShrubberyCreationForm destroyed\n";
 }
 
 void printInFile(const std::string& fileName)

@@ -3,7 +3,7 @@
 #include <cstdlib>  // for rand() and srand()
 #include <ctime>    // for time()
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm(), _target("")
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request", 72, 45), _target("target")
 {
     std::cout << "RobotomyRequestForm Defaut constructor called \n";
 }
@@ -45,8 +45,8 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const
 
     srand(time(0));
     if (rand() % 2 )
-        std::cout << _target << " has been robotomized successfully 50% of the time\n";
+        std::cout << _target << " has been robotomized successfully 50% of the time✅\n";
     else
-        std::cout << "Robotomy of " << _target << " failed!" << std::endl;
+        std::cout << "Robotomy of " << _target << " failed!❌" << std::endl;
 }
 

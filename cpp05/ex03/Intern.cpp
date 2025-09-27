@@ -51,7 +51,7 @@ AForm* Intern::makeForm(std::string formName, std::string target)
 {
     std::string requests[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 
-    //Array pointer 
+    //array pointer 
     AForm* (Intern::*functions[3])(std::string formName, std::string target) = {
         &Intern::makeRobotomy,
         &Intern::makePresidential,

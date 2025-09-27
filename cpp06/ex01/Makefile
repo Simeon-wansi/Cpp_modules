@@ -1,23 +1,21 @@
-NAME = convert
+NAME =  serialize
 
-CXX = c++
-
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main.cpp Data.cpp Serializer.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
+CXX = c++
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp 
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
@@ -27,3 +25,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

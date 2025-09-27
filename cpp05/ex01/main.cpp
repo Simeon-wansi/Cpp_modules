@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/16 20:43:57 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/24 19:36:15 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
     Bureaucrat lowGrade("Bob", 150);
     Form form1("Tax form", 50, 25);
     
-    std::cout << "Before signing: " << form1 << std::endl;
+    std::cout << "\nBefore signing: " << form1 << std::endl;
     std::cout << std::endl;
     
     lowGrade.signForm(form1);

@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:54:19 by sngantch          #+#    #+#             */
-/*   Updated: 2025/09/16 20:37:38 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:26:36 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main(void)
     Bureaucrat bureau1("Bureau1", 150);
     Bureaucrat bureau2("Bureau2", 150);
 
-    std::cout<<"\n";
+    std::cout<<"--1--\n";
     std::cout << bureau1 <<std::endl;
     std::cout << bureau2 <<std::endl;
 
-    std::cout<<"\n";
+    std::cout<<"--2--\n";
 
     for( int i = 1; i < 153; i++)
     {
@@ -36,7 +36,7 @@ int main(void)
         }
     }
     
-    std::cout<<"\n";
+    std::cout<<"--3--\n";
     try {
         bureau2.decrementGrade();
     }
@@ -44,12 +44,12 @@ int main(void)
     {
         std::cout << "Error: " << e.what() << std::endl;
     }
-    std::cout<<"\n new values \n";
+    std::cout<<"\n --4--new values \n";
     
     std::cout << bureau1 <<std::endl;
     std::cout << bureau2 <<std::endl;
     
-    std::cout<<"\n Invalid\n ";
+    std::cout<<"\n--5--Invalid\n ";
     try
     {
         Bureaucrat invalid("invalid", 0);
@@ -59,7 +59,7 @@ int main(void)
         std::cerr << e.what() << '\n';
     }
     
-    std::cout <<"\n Test grade too low\n";
+    std::cout <<"\n--6--Test grade too low\n";
     try
     {
         Bureaucrat invalid2("TooLow", 151);
@@ -69,6 +69,6 @@ int main(void)
         std::cerr <<"Constrcutor error: " << e.what() << '\n';
     }
     
-    std::cout<<"\n Cleaning!\n";
+    std::cout<<"\n--7--Cleaning!\n";
 }
 
