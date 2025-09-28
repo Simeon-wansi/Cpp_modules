@@ -10,11 +10,11 @@ int main(void)
 
     uintptr_t raw = Serializer::serialize(&data);
 
-    std::cout << "Address: " << &raw << std::endl;
+    std::cout << "Address: " << raw << std::endl;
 
     Data* deserialized = Serializer::deserialize(raw);
 
-    std::cout << "Address: " << &deserialized << std::endl;
+    std::cout << "Address: " << deserialized << std::endl;
 
     std::cout << "ID: " << deserialized->getId() << std::endl;
     std::cout << "Name: " << deserialized->getName() << std::endl;
