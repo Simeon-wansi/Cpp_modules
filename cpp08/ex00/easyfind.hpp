@@ -2,7 +2,7 @@
 # define EASYFIND_HPP
 
 #include <iostream>
-#include <vector>
+#include <algorithm>
 
 class NotFoundException: public std::exception
 {
@@ -17,17 +17,13 @@ class NotFoundException: public std::exception
 template <typename T>
 typename T::iterator easyfind(T& tab, int b)
 {
-  
 
+    typename T::iterator res = std::find(tab.begin(), tab.end(), b);
 
-    for (typename T::iterator it = tab.begin(); it != tab.end(); ++it)
-    {
-        if (*it == b)
-            return it;
-    }
+    if (res == tab.end())
+        throw NotFoundException();
 
-    throw NotFoundException();
+    return (res);
 }
-
 
 #endif

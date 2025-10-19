@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:54:10 by sngantch          #+#    #+#             */
-/*   Updated: 2025/08/19 12:10:33 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/10/06 13:25:16 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ class ICharacter
     virtual void use(int idx, ICharacter& target) = 0;
     
 };
+
 
 #endif

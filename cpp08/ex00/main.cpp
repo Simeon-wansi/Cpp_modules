@@ -1,11 +1,38 @@
 #include "easyfind.hpp"
-// #include "easyfinf.tpp"
 #include <list>
 #include <deque>
+#include <vector>
 
-// // Test with deque
-// std::deque<int> myDeque = {5, 10, 15};
-// std::deque<int>::iterator it2 = easyfind(myDeque, 10);
+// int main(void)
+// {
+//     std::vector<int> tab;
+//     tab.push_back(1);
+//     tab.push_back(2);
+//     tab.push_back(3);
+//     tab.push_back(4);
+//     tab.push_back(5);
+
+//     try
+//     {
+//         std::vector<int>::iterator res = easyfind(tab, 5);
+//         std::cout <<"Found: " << *res << std::endl;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << "\n";
+//     }
+
+//     try
+//     {
+//         std::vector<int>::iterator res = easyfind(tab, 8);
+//         std::cout <<"Found: " << *res << std::endl;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << "\n";
+//     }
+// }
+
 
 int main(void)
 {
@@ -70,32 +97,3 @@ int main(void)
 
 
 
-// int main(void)
-// {
-//     std::vector<int> tab;
-//     tab.push_back(1);
-//     tab.push_back(2);
-//     tab.push_back(3);
-//     tab.push_back(4);
-//     tab.push_back(5);
-
-//     try
-//     {
-//         std::vector<int>::iterator res = easyfind(tab, 5);
-//         std::cout <<"Found: " << *res << std::endl;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << "\n";
-//     }
-
-//     try
-//     {
-//         std::vector<int>::iterator res = easyfind(tab, 8);
-//         std::cout <<"Found: " << *res << std::endl;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << "\n";
-//     }
-// }
