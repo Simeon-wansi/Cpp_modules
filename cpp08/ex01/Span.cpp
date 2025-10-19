@@ -10,7 +10,7 @@ Span::Span(Span const & src) {
 
 Span::~Span() {}
 
-Span & Span::operator=(Span const & other) {
+Span& Span::operator=(Span const & other) {
     if (this != &other) {
         _n = other._n;
         _v = other._v;
@@ -22,7 +22,7 @@ void Span::addNumber(int nb) {
     if (_v.size() < _n)
         _v.push_back(nb);
     else
-        throw NotFoundException();
+        throw FullException();
 }
 
 int Span::shortestSpan() {

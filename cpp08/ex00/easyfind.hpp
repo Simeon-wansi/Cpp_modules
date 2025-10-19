@@ -25,5 +25,5 @@ typename T::iterator easyfind(T& tab, int b)
 
     return (res);
 }
-
+ 
 #endif
