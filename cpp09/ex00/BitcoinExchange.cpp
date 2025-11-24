@@ -153,7 +153,7 @@ void BitcoinExchange::_parseCsvLine(const std::string& line)
     
     // if (!_isValidDate(date) || !_isValidValue(strValue))
     // {
-    //     std::cerr << "Date or BTC value not valid - 1! \n";
+    //     std::cerr << "Date or BTC value not valid - 1! " << std::endl;
     //     return;
     // }
 

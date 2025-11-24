@@ -6,7 +6,7 @@
 /*   By: sngantch <sngantch@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 22:29:05 by sngantch          #+#    #+#             */
-/*   Updated: 2025/10/06 19:04:25 by sngantch         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:01:41 by sngantch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,6 @@ Fixed& Fixed::operator++()
     _fixedPointValue++;
     return *this;
 }
-
 
 
 Fixed Fixed::operator--(int)
