@@ -152,6 +152,20 @@ void  PmergeMe::_fordJohnsonVector(std::vector<int>& arr)
         _fordJohnsonVector(mainChain);
 
     //insert pending elts using binary search
+   
+    // for (size_t j = 0; j < pending.size(); j++) {
+    //     size_t insertPos = 0;
+    //     for (size_t k = 0; k  < mainChain.size(); k++)
+    //     {
+    //         if (pending[j] < mainChain[k])
+    //         {
+    //             insertPos = k;
+    //             break;
+    //         }
+    //         insertPos = k + 1;
+    //     }
+    //     mainChain.insert(mainChain.begin() + insertPos, pending[j]);
+    // }
     for (size_t j = 0; j < pending.size(); j++) {
         std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), pending[j]);
         mainChain.insert(pos, pending[j]);
@@ -165,7 +179,7 @@ void  PmergeMe::_fordJohnsonVector(std::vector<int>& arr)
 
     //cpy result back
     arr =  mainChain;
-}
+} 
 
 void PmergeMe::_sortDeque() {
     _fordJohnsondeque(_deq);
