@@ -8,6 +8,7 @@ int main(int ac, char **av)
     if (!pmm.parseInput(ac, av))
         return 1;
 
+    // std::cout << "\nDebug\n";
     pmm.sort();
 
     return 0;

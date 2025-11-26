@@ -16,8 +16,13 @@ private:
     void _sortVector();
     void _sortDeque();
 
+    std::vector<size_t> _generateJacobsthalVector(size_t n);
+    std::vector<size_t> _generateInsertionOrderVector(size_t pendingSize);
     void _fordJohnsonVector(std::vector<int>& arr);
-    void _fordJohnsondeque(std::deque<int>& arr);
+
+    std::deque<size_t> _generateJacobsthalDeque(size_t n);
+    std::deque<size_t> _generateInsertionOrderDeque(size_t pendingSize);
+    void _fordJohnsonDeque(std::deque<int>& arr);
 
 public:
     PmergeMe();
