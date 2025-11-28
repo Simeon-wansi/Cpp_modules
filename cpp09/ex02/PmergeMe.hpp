@@ -5,6 +5,10 @@
 #include <vector>
 #include <deque>
 #include <sys/time.h>
+#include <algorithm> 
+#include <cstdlib>
+#include <string>
+#include <iomanip>
 
 class PmergeMe{
 
@@ -33,7 +37,6 @@ public:
     bool parseInput(int ac, char** av);
     void sort();
     void displayResults(double vecTime, double deqTime);
-
 };
 
 

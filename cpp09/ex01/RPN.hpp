@@ -4,12 +4,13 @@
 #include <iostream>
 #include <sstream>
 #include <stack>
+#include <list>
 
 
 class RPN{
 
     private:
-        std::stack<int> _stack;
+        std::stack<int, std::list<int> > _stack;
         bool is_operator(char c);
     
     public:
@@ -20,11 +21,4 @@ class RPN{
         int convert(const std::string &str);
 };
 
-
 #endif
-
-// 1 * 2 / 2 * 2 2 - 4 +
-
-// 7 * 7 - 7 = 42 
-
-// 8 * 9 - 9 -9 - 9 - 4 + 1 = 

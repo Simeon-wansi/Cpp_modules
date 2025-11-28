@@ -1,19 +1,13 @@
 #include "RPN.hpp"
 
-
 RPN::RPN() {}
-
 
 bool RPN::is_operator(char c)
 {
     return (c == '+' || c == '-' || c == '/' || c == '*');
 }
 
-
-RPN::~RPN()
-{
-
-}
+RPN::~RPN() {}
 
 RPN::RPN(const RPN& other): _stack(other._stack)
 {}
@@ -25,10 +19,8 @@ RPN& RPN::operator=(const RPN& other)
         _stack = other._stack;
 
     }
-
     return *this;
 }
-
 
 int RPN::convert(const std::string &str)
 {
@@ -41,7 +33,6 @@ int RPN::convert(const std::string &str)
     while( ss >> token) // will always skip the spaces
     {
         //checking if token is a single digit 
-
         if(token.length() == 1 && isdigit(token[0]))
         {
             int num = token[0] - '0';
@@ -83,18 +74,15 @@ int RPN::convert(const std::string &str)
         {
             std::cerr << "Error" << std::endl;
             return 1;
-        }  
+        }
     }
-
-    //making sure I have only 1 elemnt left which is the eresult
+    //making sure i have only 1 elemnt left which is the eresult
     if (_stack.size() != 1)
     {
         std::cerr << "Error " << std::endl;
         return 1;
     }
-
     std::cout << _stack.top() << std::endl;
 
     return 0;
 }
-

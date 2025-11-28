@@ -35,7 +35,6 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src)
     return *this;
 }
 
-
 bool BitcoinExchange::_isLeap(int year)
 {
     return (((year % 4 == 0) && (year % 100 != 0)) ||
